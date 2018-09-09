@@ -30,6 +30,7 @@ This document provides the general information about basic SONiC incremental con
 3. Create/remove port channels
 4. Add/remove members of port channels
 - Should be able to restart docker swss and the system recovers to the state before the restart
+
 *Note:*
 1. *Conflicting configurations that cannot be directly resolved are **NOT** supported in this phrase, including: moving a port with IP into a port channel; assign an IP to a port channel member; adding/removing/manipulating non-existing ports, etc.*
 2. *Port channel and port channel members' admin status are controlled separately, indicating that a port channel's admin status DOWN will NOT affect its members' admin status to be brought down as well.*
@@ -37,6 +38,7 @@ This document provides the general information about basic SONiC incremental con
 4. *MTU will be changed to the port channel's MTU once a port is enslaved into the port channel. However, the value will be automatically reset to its original one after the port is removed from the port channel.*
 #### Phase #2
 - Should be able to restart docker teamd and all port channel configurations are reapplied
+
 *Note:*
 *The reason of moving this request into phase 2 is due to unrelated issues encountered while removing and recreating router interfaces, including IPv6 removal and potential SAI implementation issues.*
 
