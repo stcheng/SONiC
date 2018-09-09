@@ -60,8 +60,32 @@ The gap that orchagent daemon needs to fill is mostly related to MTU:
 
 # 2. Database Design
 ## 2.1 CONF_DB
-
-## 2.2 APPL_DB
+#### 2.1.1 PORT Table
+```
+PORT|{{port_name}}
+  "admin_status": {{UP|DOWN}}
+  "mtu": {{mtu_value}}
+```
+#### 2.1.2 INTERFACE Table
+```
+INTERFACE|{{port_name}}|{{IP}}
+```
+#### 2.1.3 PORTCHANNEL Table
+```
+PORTCHANNEL|{{port_channel_name}}
+  "admin_status": {{UP|DOWN}}
+  "mtu": {{mtu_value}}
+  "min_links": {{min_links_value}}
+  "fall_back": {{true|false}}
+```
+#### 2.1.4 PORTCHANNEL_INTERFACE Table
+```
+PORTCHANNEL_INTERFACE|{{port_channel_name}}|{{IP}}
+```
+#### 2.1.5 PORTCHANNEL_MEMBER Table
+```
+PORTCHANNEL_MEMBER|{{port_channel_name}}|{{port_name}}
+```
 
 # 3. Daemon Design
 ## 3.1 orchagent
