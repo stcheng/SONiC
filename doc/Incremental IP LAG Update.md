@@ -1,18 +1,20 @@
 # SONiC IP/LAG Incremental Update
-# High Level Design Document
-### Rev 0.1
 
 # Table of Contents
+* [Revision](#revision)
+* [About](#0-about)
+* [Requirements Overview](#1-requirements-overview)
+* [Database Design](#2-database-design)
+* [Daemon Design](#3-daemon-design)
+* [Flows](#4-flows)
 
 ##### Revision
 | Rev |  Date   |       Author       | Change Description |
 |:---:|:--------|:------------------:|--------------------|
 | 0.1 | 2018-09 |   Shuotian Cheng   | Initial Version    |
 
-# About
+# 0. About
 This document provides the general information about basic SONiC incremental configuration support including IP addresses configuration changes, and port channel configuration changes.
-
-# Definitions/Abbreviations
 
 # 1. Requirements Overview
 ## 1.1 Functional Requirements
