@@ -59,7 +59,14 @@ The gap that orchagent daemon needs to fill is mostly related to MTU:
 
 ## 1.4 Utility Requirements
 ```
-config 
+config interface <interface_name> add ip <ip_address>
+config interface <interface_name> remove ip <ip_address>
+config interface <interface_name> mtu <mtu_value>
+
+config port_channel add <port_channel_name>
+config port_channel remove <port_channel_name>
+config port_channel member add <port_channel_name> <port_name>
+config port_channel member remove <port_channel_name> <port_name>
 ```
 
 # 2. Database Design
@@ -92,10 +99,18 @@ PORTCHANNEL_MEMBER|{{port_channel_name}}|{{port_name}}
 ```
 
 # 3. Daemon Design
-## 3.1 orchagent
-## 3.2 portmgrd
+## 3.1 `orchagent`
+- When LAG MTU is updated, all LAG members' MTUs are updated.
+- When port/LAG MTU is updated, the associated router interface MTU is updated.
+## 3.2 `portmgrd`
+- Monitor `PORT` table
+- Should be responsible for admin status changes and MTU changes
 ## 3.3 intfsyncd
+- Monitor `PORT_INTERFACE`,  `PORTCHANNEL_INTERFACE`, `VLAN_INTERFACE` tables
+- Should be responsible for IP changes
 ## 3.4 teamsyncd
+- Monitor `PORTCHANNEL` and `PORTCHANNEL_MEMBER` tables
+- Should be responsible for port channel changes and member changes
 
 # 4. Flows
 ## 4.1 IP Assignment on System Start
