@@ -2,7 +2,7 @@
 
 # Table of Contents
 * [Revision](#revision)
-* [About](#0-about)
+* [About](#about)
 * [Requirements Overview](#1-requirements-overview)
 * [Database Design](#2-database-design)
 * [Daemon Design](#3-daemon-design)
@@ -13,7 +13,7 @@
 |:---:|:--------|:------------------:|--------------------|
 | 0.1 | 2018-09 |   Shuotian Cheng   | Initial Version    |
 
-# 0. About
+# About
 This document provides the general information about basic SONiC incremental configuration support including IP addresses configuration changes, and port channel configuration changes.
 
 # 1. Requirements Overview
@@ -48,6 +48,7 @@ This document provides the general information about basic SONiC incremental con
 *The reason of moving this request into phase 2 is due to unrelated issues encountered while removing and recreating router interfaces, including IPv6 removal and potential SAI implementation issues.*
 
 #### Future Work
+TBD
 ## 1.2 Orchagent Requirements
 The gap that orchagent daemon needs to fill is mostly related to MTU:
 - Should be able to change router interface MTU
@@ -126,4 +127,6 @@ PORTCHANNEL_MEMBER|{{port_channel_name}}|{{port_name}}
 ## 4.4 Device Start Flow
 ![Image](https://github.com/stcheng/SONiC/blob/gh-pages/doc/device_start.png)
 ## 4.5 Docker swss Restart
+TBD
 ## 4.6 Docker teamd Restart
+TBD
