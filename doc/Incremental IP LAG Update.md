@@ -36,7 +36,7 @@ This document provides the general information about basic SONiC incremental con
 - Should be able to restart docker swss and the system recovers to the state before the restart
 
 *Note:*
-1. *Conflicting configurations that cannot be directly resolved are **NOT** supported in this phrase, including:
+1. *Conflicting configurations that cannot be directly resolved are **NOT** supported in this phrase, including:*
 - *moving a port with IP into a port channel*
 - *assign an IP to a port channel member*
 - *adding/removing non-existing ports towards port channels, etc.*
