@@ -115,9 +115,13 @@ PORTCHANNEL_MEMBER|{{port_channel_name}}|{{port_name}}
 - Should be responsible for port channel changes and member changes
 
 # 4. Flows
-## 4.1 IP Assignment on System Start
-## 4.2 Port Channel Creation on System Start
-## 4.3 CLI on IP Assignment
-## 4.4 CLI on Port Channel Manipulation
+## 4.1 Admin Status/MTU Configuration Flow
+![Image](https://github.com/stcheng/SONiC/blob/gh-pages/doc/admin_status.png)
+## 4.2 Port Channel and Member Configuration Flow
+![Image](https://github.com/stcheng/SONiC/blob/gh-pages/doc/port_channel.png)
+## 4.3 IP Configuration Flow
+![Image](https://github.com/stcheng/SONiC/blob/gh-pages/doc/ip.png)
+## 4.4 Device Start Flow
+![Image](https://github.com/stcheng/SONiC/blob/gh-pages/doc/device_start.png)
 ## 4.5 Docker swss Restart
 ## 4.6 Docker teamd Restart
