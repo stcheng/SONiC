@@ -24,6 +24,8 @@ This document provides the general information about basic SONiC incremental con
 4. All configured ports are set to admin status UP
 5. All configured ports are set to desired MTU
 #### Phase #1
+- Should not have static front panel interface configurations in `/etc/network/interfaces` file
+- Should not have static teamd configurations in `/etc/teamd/` folder.
 - Should be able to use command line to execute incremental updates including:
 1. Bring up/down all ports/port channels/VLANs
 2. Assign/remove IPs towards non-LAG-member/non-VLAN-member front panel ports, and port channels
