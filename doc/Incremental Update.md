@@ -37,6 +37,7 @@ This document provides the general information about basic SONiC incremental con
 3. *Admin status and MTU are must have attributes for ports and port channels, and the default values are UP and 9100.*
 4. *MTU will be changed to the port channel's MTU once a port is enslaved into the port channel. However, the value will be automatically reset to its original one after the port is removed from the port channel.*
 #### Phase #2
+- Should be able to move loopback interface out of `/etc/network/interfaces` file and managed by `portmgrd`.
 - Should be able to restart docker teamd and all port channel configurations are reapplied
 
 *Note:*
@@ -52,11 +53,14 @@ The gap that orchagent daemon needs to fill is mostly related to MTU:
 - `portsyncd`: Should not be listening to netlink message to get port admin status and MTU
 
 ## 1.4 \*-mgrd Requirements
-- `portmgrd`: Should be responsible for 
-- `intfsmgrd`:
-- `teammgrd`:
+- `portmgrd`: Should be responsible for admin status and MTU configuration changes. Related tables: `PORT`
+- `intfsmgrd`: Should be responsible for port/port channel/VLAN IP configuraton changes. Related tables: `PORT_INTERFACE`, `PORTCHANNEL_INTERFACE`, `VLAN_INTERFACE`.
+- `teammgrd`: Should be responsible for port channel and port channel member configuration changes. Related tables: `PORTCHANNEL` AND `PORTCHANNEL_MEMBER`.
 
 ## 1.4 Utility Requirements
+```
+config 
+```
 
 # 2. Database Design
 ## 2.1 CONF_DB
@@ -89,7 +93,7 @@ PORTCHANNEL_MEMBER|{{port_channel_name}}|{{port_name}}
 
 # 3. Daemon Design
 ## 3.1 orchagent
-## 3.2 portsyncd
+## 3.2 portmgrd
 ## 3.3 intfsyncd
 ## 3.4 teamsyncd
 
