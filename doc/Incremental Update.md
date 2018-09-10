@@ -1,4 +1,4 @@
-# SONiC Incremental Update
+# SONiC IP/LAG Incremental Update
 # High Level Design Document
 ### Rev 0.1
 
