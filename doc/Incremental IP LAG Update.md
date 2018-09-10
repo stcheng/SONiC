@@ -36,7 +36,10 @@ This document provides the general information about basic SONiC incremental con
 - Should be able to restart docker swss and the system recovers to the state before the restart
 
 *Note:*
-1. *Conflicting configurations that cannot be directly resolved are **NOT** supported in this phrase, including: moving a port with IP into a port channel; assign an IP to a port channel member; adding/removing/manipulating non-existing ports, etc.*
+1. *Conflicting configurations that cannot be directly resolved are **NOT** supported in this phrase, including:
+- *moving a port with IP into a port channel*
+- *assign an IP to a port channel member*
+- *adding/removing non-existing ports towards port channels, etc.*
 2. *Port channel and port channel members' admin status are controlled separately, indicating that a port channel's admin status DOWN will NOT affect its members' admin status to be brought down as well.*
 3. *Admin status and MTU are must have attributes for ports and port channels, and the default values are UP and 9100.*
 4. *MTU will be changed to the port channel's MTU once a port is enslaved into the port channel. However, the value will be automatically reset to its original one after the port is removed from the port channel.*
