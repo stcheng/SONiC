@@ -3,6 +3,7 @@
 # Table of Contents
 * [Revision](#revision)
 * [About](#about)
+* [Scope](#scope)
 * [Requirements Overview](#1-requirements-overview)
 * [Database Design](#2-database-design)
 * [Daemon Design](#3-daemon-design)
@@ -12,6 +13,8 @@
 | Rev |  Date   |       Author       | Change Description |
 |:---:|:--------|:------------------:|--------------------|
 | 0.1 | 2018-09 |   Shuotian Cheng   | Initial Version    |
+
+# Scope
 
 # About
 This document provides the general information about basic SONiC incremental configuration support including IP addresses configuration changes, and port channel configuration changes.
